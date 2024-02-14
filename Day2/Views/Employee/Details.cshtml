@@ -1,0 +1,89 @@
+﻿
+@model Employee
+
+
+<style>
+    .container {
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    thead {
+        background-color: #333;
+        color: #fff;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        text-transform: uppercase;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    img {
+        width: 300px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+  
+</style>
+@if(Model is null)
+{
+    <h5>Employee Doesn't Exist</h5>
+}else{
+<div class="container">
+    <h1>Employees Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Sex</th>
+                <th>Salary</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+            
+                <tr>
+                    <td>@Model.SSN</td>
+                    <td>@Model.Fname @Model.Lname</td>
+                    <td>@Model.Address</td>
+                    <td>@Model.Sex</td>
+                    <td>$@Model.Salary</td>
+                    
+                </tr>
+                
+          
+        </tbody>
+    </table>
+   
+</div>
+}
+@* @section employee{
+    @Model.Fname @Model.Lname
+} *@
